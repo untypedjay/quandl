@@ -89,7 +89,22 @@ namespace Quandl.UI
         #region Parallel Implementations
         private void TaskImplementation()
         {
-            names.Select(name => RetrieveStockDataAsync(name))
+            var tasks = names.Select(name => RetrieveStockDataAsync(name)
+                .ContinueWith(t => t.Result.GetValues())
+                .ContinueWith(t =>
+                {
+                    var values = t.Result;
+                    var series = GetSeries(values, name);
+                    var trend = GetTrend(values, name);
+                    return new[] { series, trend };
+                })
+            );
+
+            Task.WhenAll(tasks).ContinueWith(t =>
+            {
+                DisplayData(t.Result.SelectMany(x => x).ToList());
+                SaveImage("chart_tasks");
+            });
         }
 
         private async Task AsyncImplementation()
