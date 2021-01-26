@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace Quandl.UI
         private QuandlService service;
         private readonly string[] names = { "MSFT", "AAPL", "GOOG" };
         private const int INTERVAL = 200;
+        private Stopwatch sw = new Stopwatch();
 
         public QuandlViewer()
         {
@@ -23,6 +25,7 @@ namespace Quandl.UI
 
         private void displayButton_Click(object sender, EventArgs e)
         {
+            sw.Restart();
             //SequentialImplementation();
             TaskImplementation();
             //await AsyncImplementation();
@@ -124,6 +127,8 @@ namespace Quandl.UI
                 {
                     chart.Series.Add(series);
                 }
+                sw.Stop();
+                MessageBox.Show($"Runtime [ms]: {sw.ElapsedMilliseconds}");
             }
         }
 
