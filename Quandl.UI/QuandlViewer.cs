@@ -114,7 +114,7 @@ namespace Quandl.UI
         {
             var tasks = names.Select(async name =>
             {
-                var stockData = await RetrieveStockDataAsync(name);
+                var stockData = await RetrieveStockDataAsync(name).ConfigureAwait(false);
                 var values = stockData.GetValues();
                 var series = GetSeries(values, name);
                 var trend = GetTrend(values, name);
