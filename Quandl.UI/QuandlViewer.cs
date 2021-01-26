@@ -23,12 +23,12 @@ namespace Quandl.UI
             service = new QuandlService();
         }
 
-        private void displayButton_Click(object sender, EventArgs e)
+        private async void displayButton_Click(object sender, EventArgs e)
         {
             sw.Restart();
             //SequentialImplementation();
-            TaskImplementation();
-            //await AsyncImplementation();
+            //TaskImplementation();
+            await AsyncImplementation();
         }
 
         #region Sequential Implementation
@@ -112,7 +112,17 @@ namespace Quandl.UI
 
         private async Task AsyncImplementation()
         {
-            // TODO
+            var tasks = names.Select(async name =>
+            {
+                var stockData = await RetrieveStockDataAsync(name);
+                var values = stockData.GetValues();
+                var series = GetSeries(values, name);
+                var trend = GetTrend(values, name);
+                return new[] { series, trend };
+            });
+
+            DisplayData((await Task.WhenAll(tasks)).SelectMany(x => x).ToList());
+            SaveImage("chart_async");
         }
         #endregion
 
