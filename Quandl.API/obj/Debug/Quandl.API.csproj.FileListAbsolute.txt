@@ -1,0 +1,9 @@
+C:\Users\Manish\Documents\quandl\Quandl.API\bin\Debug\Data\AAPL.xml
+C:\Users\Manish\Documents\quandl\Quandl.API\bin\Debug\Data\GOOG.xml
+C:\Users\Manish\Documents\quandl\Quandl.API\bin\Debug\Data\MSFT.xml
+C:\Users\Manish\Documents\quandl\Quandl.API\bin\Debug\Quandl.API.dll
+C:\Users\Manish\Documents\quandl\Quandl.API\bin\Debug\Quandl.API.pdb
+C:\Users\Manish\Documents\quandl\Quandl.API\obj\Debug\Quandl.API.csprojAssemblyReference.cache
+C:\Users\Manish\Documents\quandl\Quandl.API\obj\Debug\Quandl.API.csproj.CoreCompileInputs.cache
+C:\Users\Manish\Documents\quandl\Quandl.API\obj\Debug\Quandl.API.dll
+C:\Users\Manish\Documents\quandl\Quandl.API\obj\Debug\Quandl.API.pdb

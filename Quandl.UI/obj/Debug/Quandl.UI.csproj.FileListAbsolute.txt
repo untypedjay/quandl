@@ -1,0 +1,13 @@
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Data\AAPL.xml
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Data\GOOG.xml
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Data\MSFT.xml
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Quandl.UI.exe.config
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Quandl.UI.exe
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Quandl.UI.pdb
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Quandl.API.dll
+C:\Users\Manish\Documents\quandl\Quandl.UI\bin\Debug\Quandl.API.pdb
+C:\Users\Manish\Documents\quandl\Quandl.UI\obj\Debug\Quandl.UI.csprojAssemblyReference.cache
+C:\Users\Manish\Documents\quandl\Quandl.UI\obj\Debug\Quandl.UI.csproj.CoreCompileInputs.cache
+C:\Users\Manish\Documents\quandl\Quandl.UI\obj\Debug\Quandl.UI.csproj.CopyComplete
+C:\Users\Manish\Documents\quandl\Quandl.UI\obj\Debug\Quandl.UI.exe
+C:\Users\Manish\Documents\quandl\Quandl.UI\obj\Debug\Quandl.UI.pdb
