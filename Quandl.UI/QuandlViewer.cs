@@ -23,8 +23,8 @@ namespace Quandl.UI
 
         private void displayButton_Click(object sender, EventArgs e)
         {
-            SequentialImplementation();
-            //TaskImplementation();
+            //SequentialImplementation();
+            TaskImplementation();
             //await AsyncImplementation();
         }
 
@@ -116,16 +116,24 @@ namespace Quandl.UI
         #region Helpers
         private void DisplayData(List<Series> seriesList)
         {
-            chart.Series.Clear();
-            foreach (Series series in seriesList)
+            if (InvokeRequired) Invoke((Action<List<Series>>)DisplayData, seriesList);
+            else
             {
-                chart.Series.Add(series);
+                chart.Series.Clear();
+                foreach (Series series in seriesList)
+                {
+                    chart.Series.Add(series);
+                }
             }
         }
 
         private void SaveImage(string fileName)
         {
-            chart.SaveImage(fileName + ".jpg", ChartImageFormat.Jpeg);
+            if (InvokeRequired) Invoke((Action<string>)SaveImage, fileName);
+            else
+            {
+                chart.SaveImage(fileName + ".jpg", ChartImageFormat.Jpeg);
+            }
         }
         #endregion
     }
